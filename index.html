@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中秋節動態網頁設計 by 戚瀚</title>
+    <link rel="shortcut icon" href="./images/a8srh-ed08s-001.ico">
+
+    <style>
+        * {
+            /* outline: red 1px solid; */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .title_wrap{
+            width: 100%;     
+        }
+
+        .title_wrap .title_font .title01{
+            height: 20%;
+            position: absolute;
+            top: 18%;
+            left: 19%;
+            z-index: 20;
+        }
+        .title_wrap .title_font .title02{
+            height: 15%;
+            position: absolute;
+            top: 21%;
+            left: 26%;
+            z-index: 20;
+        }
+        .title_wrap .title_font .title03{
+            height: 20%;
+            position: absolute;
+            top: 18%;
+            left: 31%;
+            z-index: 20;
+        }
+        .title_wrap .title_font .title04{
+            height: 15%;
+            position: absolute;
+            top: 21%;
+            left: 36%;
+            z-index: 20;
+        }
+
+        .background {
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .background img {
+            width: 100%;
+            /* height: 100%;     */
+        }
+
+        .wave {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wave img {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .wave01 {
+            z-index: 3;
+            transform: translateY(30px);
+            animation: wave 3s ease infinite;
+            transition: 1s;
+        }
+
+        .wave02 {
+            z-index: 2;
+            transform: translateY(50px);
+            animation: wave 5s ease infinite;
+            transition: 1s;
+        }
+
+        .wave03 {
+            z-index: 1;
+            transform: translateY(70px);
+            animation: wave 7s ease infinite;
+            transition: 1s;
+        }
+
+        @keyframes wave {
+            50% {
+                transform: translateY(0px);
+            }
+        }
+
+        .moon {
+            width: 100%;
+        }
+
+        .moon img {
+            width: 40%;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .moon .circle {
+            opacity: .5;
+            animation: moon 30s linear infinite;
+        }
+
+        @keyframes moon {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cloud {
+            width: 100%;
+        }
+
+        .cloud img {
+            width: 100%;
+            height: 90%;
+            position: absolute;
+            left: 0;
+            top: 5%;
+            z-index: 10;
+            animation: cloud 10s ease-in-out infinite;
+        }
+
+        @keyframes cloud {
+            0%{
+                transform: translate(0) scale(1);
+                opacity: .3;
+            }
+            50%{
+                transform: translate(30px, 30px) scale(1.01);
+                opacity: .5;
+            }
+            100%{
+                transform: translate(0) scale(1);
+                opacity: .3;
+            }
+        }
+
+        .rabbit{
+            width: 100%;
+        }
+
+        .rabbit img{
+            width: 8%;
+            position: absolute;
+            right: 25%;
+            top: 35%;
+            z-index: 1;
+            animation: rabbit 5s ease infinite;
+            animation-delay: .2s;
+        }
+
+        @keyframes rabbit{
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        .rabbits img{
+            width: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            z-index: 2;
+            animation: rabbits 3s ease infinite;
+            animation-delay: .2s;
+        }
+
+        @keyframes rabbits {
+            50%{
+                transform: translateY(20px);
+            }
+        }
+
+        .flowers_wrap{
+            width: 100vw;
+            height: 100vh;
+            /* position: relative; */
+        }
+
+        .flower{
+            width: 100%;
+        }
+
+        .flower .flower_01{
+            width: 2%;
+            position: absolute;
+            top: -3vh;
+            left: 0;
+            z-index: 1;
+            animation: flower01 15s ease infinite;
+        }
+
+        @keyframes flower01{
+            0%{
+            }
+            100%{
+                top: 115vh;
+                left: 45vw;
+                transform: rotate(360deg) scale(1.5);
+            }
+        }
+        .flower .flower_02{
+            width: 3%;
+            position: absolute;
+            top: -5vh;
+            left: -5vw;
+            z-index: 15;
+            animation: flower02 20s ease infinite;
+            animation-delay: 5s;
+        }
+
+        @keyframes flower02{
+            0%{
+            }
+            100%{
+                top: 115vh;
+                left: 30vw;
+                transform: rotate(360deg) scale(2);
+            }
+        }
+
+        .flower .flower_03{
+            width: 2%;
+            position: absolute;
+            top: -5vh;
+            left: 20vw;
+            z-index: 2;
+            animation: flower03 10s ease infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes flower03{
+            0%{
+            }
+            100%{
+                top: 110vh;
+                left: 55vw;
+                transform: rotate(360deg) scale(1.8);
+            }
+        }
+        .flower .flower_04{
+            width: 2%;
+            position: absolute;
+            top: -10vh;
+            left: 45vw;
+            z-index: 15;
+            animation: flower04 13s ease infinite;
+            animation-delay: 4s;
+        }
+
+        @keyframes flower04{
+            0%{
+            }
+            100%{
+                top: 110vh;
+                left: 70vw;
+                transform: rotate(360deg) scale(1.5);
+            }
+        }
+        .flower .flower_05{
+            width: 2%;
+            position: absolute;
+            top: 10vh;
+            left: -5vw;
+            z-index: 2;
+            animation: flower05 18s ease infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes flower05{
+            0%{
+            }
+            100%{
+                top: 80vh;
+                left: 110vw;
+                transform: rotate(360deg) scale(2);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="title_wrap">
+            <div class="title_font">
+                <img class="title01" src="./images/title_月.png" alt="">
+            </div>
+            <div class="title_font">
+                <img class="title02" src="./images/title_圓.png" alt="">
+            </div>
+            <div class="title_font">
+                <img class="title03" src="./images/title_中.png" alt="">
+            </div>
+            <div class="title_font">
+                <img class="title04" src="./images/title_秋.png" alt="">
+            </div>
+        </div>
+
+        <div class="background">
+            <img src="./images/background.png" alt="">
+        </div>
+
+        <div class="wave">
+            <img class="wave03" src="./images/wave03.png" alt="">
+        </div>
+        <div class="wave">
+            <img class="wave02" src="./images/wave02.png" alt="">
+        </div>
+        <div class="wave">
+            <img class="wave01" src="./images/wave01.png" alt="">
+        </div>
+
+        <div class="moon">
+            <img src="./images/moon.png" alt="">
+            <img class="circle" src="./images/circle.png" alt="">
+        </div>
+
+        <div class="cloud">
+            <img src="./images/cloud.png" alt="">
+        </div>
+
+        <div class="rabbit">
+            <img src="./images/rabbit.png" alt="">
+        </div>
+
+        <div class="rabbits">
+            <img src="./images/rabbits.png" alt="">
+        </div>
+
+        <div class="flowers_wrap">
+            <div class="flower">
+                <img class="flower_01" src="./images/flower.png" alt="">
+            </div>
+            <div class="flower">
+                <img class="flower_02" src="./images/flower.png" alt="">
+            </div>
+            <div class="flower">
+                <img class="flower_03" src="./images/flower.png" alt="">
+            </div>
+            <div class="flower">
+                <img class="flower_04" src="./images/flower.png" alt="">
+            </div>
+            <div class="flower">
+                <img class="flower_05" src="./images/flower.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
