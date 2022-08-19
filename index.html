@@ -22,45 +22,53 @@
             overflow: hidden;
             position: relative;
         }
-        .title_wrap{
-            width: 100%;     
+
+        .title_wrap {
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            /* position: relative; */
         }
 
-        .title_wrap .title_font .title01{
-            height: 20%;
+        .title_wrap .word_size{
+            width: 250px;
+            height: 250px;
+        }
+
+        .title_wrap .title_font01{
             position: absolute;
             top: 18%;
-            left: 19%;
-            z-index: 20;
+            left: 10%;
         }
-        .title_wrap .title_font .title02{
-            height: 15%;
+
+        .title_wrap .title_font02{
             position: absolute;
-            top: 21%;
-            left: 26%;
-            z-index: 20;
-        }
-        .title_wrap .title_font .title03{
-            height: 20%;
-            position: absolute;
+            /* height: 15%; */
             top: 18%;
-            left: 31%;
-            z-index: 20;
+            left: 20%;
         }
-        .title_wrap .title_font .title04{
-            height: 15%;
+
+        .title_wrap .title_font03 {
             position: absolute;
-            top: 21%;
-            left: 36%;
-            z-index: 20;
+            /* height: 20%; */
+            top: 18%;
+            left: 30%;
+        }
+
+        .title_wrap .title_font04{
+            position: absolute;
+            /* height: 15%; */
+            top: 18%;
+            left: 40%;
         }
 
         .background {
             height: 100vh;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            position: relative;
+            width: 100vw;
+            z-index: -10;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
         .background img {
@@ -115,7 +123,7 @@
             width: 40%;
             position: absolute;
             right: 0;
-            top: 0;
+            top: 1%;
         }
 
         .moon .circle {
@@ -144,25 +152,27 @@
         }
 
         @keyframes cloud {
-            0%{
+            0% {
                 transform: translate(0) scale(1);
                 opacity: .3;
             }
-            50%{
+
+            50% {
                 transform: translate(30px, 30px) scale(1.01);
                 opacity: .5;
             }
-            100%{
+
+            100% {
                 transform: translate(0) scale(1);
                 opacity: .3;
             }
         }
 
-        .rabbit{
+        .rabbit {
             width: 100%;
         }
 
-        .rabbit img{
+        .rabbit img {
             width: 8%;
             position: absolute;
             right: 25%;
@@ -172,13 +182,13 @@
             animation-delay: .2s;
         }
 
-        @keyframes rabbit{
+        @keyframes rabbit {
             50% {
                 transform: translateY(20px);
             }
         }
 
-        .rabbits img{
+        .rabbits img {
             width: 50%;
             position: absolute;
             bottom: 0;
@@ -189,22 +199,22 @@
         }
 
         @keyframes rabbits {
-            50%{
+            50% {
                 transform: translateY(20px);
             }
         }
 
-        .flowers_wrap{
+        .flowers_wrap {
             width: 100vw;
             height: 100vh;
             /* position: relative; */
         }
 
-        .flower{
+        .flower {
             width: 100%;
         }
 
-        .flower .flower_01{
+        .flower .flower_01 {
             width: 2%;
             position: absolute;
             top: -3vh;
@@ -213,16 +223,17 @@
             animation: flower01 15s ease infinite;
         }
 
-        @keyframes flower01{
-            0%{
-            }
-            100%{
+        @keyframes flower01 {
+            0% {}
+
+            100% {
                 top: 115vh;
                 left: 45vw;
                 transform: rotate(360deg) scale(1.5);
             }
         }
-        .flower .flower_02{
+
+        .flower .flower_02 {
             width: 3%;
             position: absolute;
             top: -5vh;
@@ -232,17 +243,17 @@
             animation-delay: 5s;
         }
 
-        @keyframes flower02{
-            0%{
-            }
-            100%{
+        @keyframes flower02 {
+            0% {}
+
+            100% {
                 top: 115vh;
                 left: 30vw;
                 transform: rotate(360deg) scale(2);
             }
         }
 
-        .flower .flower_03{
+        .flower .flower_03 {
             width: 2%;
             position: absolute;
             top: -5vh;
@@ -252,16 +263,17 @@
             animation-delay: 2s;
         }
 
-        @keyframes flower03{
-            0%{
-            }
-            100%{
+        @keyframes flower03 {
+            0% {}
+
+            100% {
                 top: 110vh;
                 left: 55vw;
                 transform: rotate(360deg) scale(1.8);
             }
         }
-        .flower .flower_04{
+
+        .flower .flower_04 {
             width: 2%;
             position: absolute;
             top: -10vh;
@@ -271,16 +283,17 @@
             animation-delay: 4s;
         }
 
-        @keyframes flower04{
-            0%{
-            }
-            100%{
+        @keyframes flower04 {
+            0% {}
+
+            100% {
                 top: 110vh;
                 left: 70vw;
                 transform: rotate(360deg) scale(1.5);
             }
         }
-        .flower .flower_05{
+
+        .flower .flower_05 {
             width: 2%;
             position: absolute;
             top: 10vh;
@@ -290,10 +303,10 @@
             animation-delay: 1s;
         }
 
-        @keyframes flower05{
-            0%{
-            }
-            100%{
+        @keyframes flower05 {
+            0% {}
+
+            100% {
                 top: 80vh;
                 left: 110vw;
                 transform: rotate(360deg) scale(2);
@@ -305,27 +318,31 @@
 
 <body>
     <div class="wrap">
-        <div class="title_wrap">
-            <div class="title_font">
-                <img class="title01" src="./images/title_月.png" alt="">
+        <!-- BG -->
+        <img class="background" src="./images/background.png" alt="">
+
+        <!-- title -->
+        <div class="title_wrap" id="chips">
+            <!-- <div></div> -->
+
+            <div class="title_font01" data-depth="0.5" >
+                <img class="word_size" src="./images/title_word01.png" alt="">
             </div>
-            <div class="title_font">
-                <img class="title02" src="./images/title_圓.png" alt="">
+            ./
+            <div class="title_font02" data-depth="0.7">
+                <img class="word_size" src="./images/title_word02.png" alt="">
             </div>
-            <div class="title_font">
-                <img class="title03" src="./images/title_中.png" alt="">
+            <div class="title_font03" data-depth="0.9">
+                <img class="word_size" src="./images/title_word03.png" alt="">
             </div>
-            <div class="title_font">
-                <img class="title04" src="./images/title_秋.png" alt="">
+            <div class="title_font04" data-depth="1.1">
+                <img class="word_size" src="./images/title_word04.png" alt="">
             </div>
         </div>
 
-        <div class="background">
-            <img src="./images/background.png" alt="">
-        </div>
-
+        <!-- wave -->
         <div class="wave">
-            <img class="wave03" src="./images/wave03.png" alt="">
+            <img class="wave03" src="./images/wave03.png" alt="" >
         </div>
         <div class="wave">
             <img class="wave02" src="./images/wave02.png" alt="">
@@ -334,23 +351,28 @@
             <img class="wave01" src="./images/wave01.png" alt="">
         </div>
 
+        <!-- moon -->
         <div class="moon">
             <img src="./images/moon.png" alt="">
             <img class="circle" src="./images/circle.png" alt="">
         </div>
 
+        <!-- cloud -->
         <div class="cloud">
             <img src="./images/cloud.png" alt="">
         </div>
 
+        <!-- rabbit -->
         <div class="rabbit">
             <img src="./images/rabbit.png" alt="">
         </div>
 
+        <!-- rabbits -->
         <div class="rabbits">
             <img src="./images/rabbits.png" alt="">
         </div>
 
+        <!-- flowers -->
         <div class="flowers_wrap">
             <div class="flower">
                 <img class="flower_01" src="./images/flower.png" alt="">
@@ -369,6 +391,16 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="./parallax.js"></script>
+
+    <script>
+        // parallaxInstance = new Parallax(document.getElementById("chips"));
+        var scene = document.getElementById('chips');
+        var parallaxInstance = new Parallax(scene);
+    </script>
+
 </body>
 
 </html>
