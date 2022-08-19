@@ -30,18 +30,18 @@
             /* position: relative; */
         }
 
-        .title_wrap .word_size{
+        .title_wrap .word_size {
             width: 250px;
             height: 250px;
         }
 
-        .title_wrap .title_font01{
+        .title_wrap .title_font01 {
             position: absolute;
             top: 18%;
             left: 10%;
         }
 
-        .title_wrap .title_font02{
+        .title_wrap .title_font02 {
             position: absolute;
             /* height: 15%; */
             top: 18%;
@@ -55,11 +55,63 @@
             left: 30%;
         }
 
-        .title_wrap .title_font04{
+        .title_wrap .title_font04 {
             position: absolute;
-            /* height: 15%; */
             top: 18%;
             left: 40%;
+            
+        }
+
+        .title_animate{
+            animation: title_animate 3s ease-in-out infinite;
+        }
+
+        @keyframes title_animate{
+            0%{
+                transform: scale(0.95);
+            }
+            50%{
+                transform: scale(1.05);
+            }
+            100%{
+                transform: scale(0.95);
+            }
+        }
+
+        .title_cloud01 {
+            position: absolute;
+            top: 20%;
+            left: 8%;
+        }
+
+        .title_cloud02 {
+            position: absolute;
+            top: 30%;
+            left: 25%;
+        }
+
+        .title_cloud03 {
+            position: absolute;
+            top: 28%;
+            left: 38%;
+        }
+
+        .title_cloud01 img {
+            height: 100px;
+        }
+
+        .title_cloud02 img {
+            height: 160px;
+        }
+
+        .title_cloud03 img {
+            height: 130px;
+        }
+
+        .title_moon {
+            position: absolute;
+            top: 10%;
+            left: 30%;
         }
 
         .background {
@@ -324,25 +376,47 @@
         <!-- title -->
         <div class="title_wrap" id="chips">
             <!-- <div></div> -->
+            <div class="title_moon" data-depth="0.1">
+                <img src="./images/title_moon.png" alt="">
+            </div>
 
-            <div class="title_font01" data-depth="0.5" >
+            <div class="title_cloud01" data-depth="0.4">
+                <img src="./images/title_cloud.png" alt="">
+            </div>
+
+
+            <div class="title_font01 title_animate">
                 <img class="word_size" src="./images/title_word01.png" alt="">
             </div>
-            ./
-            <div class="title_font02" data-depth="0.7">
+
+  
+            <div class="title_font02 title_animate">
                 <img class="word_size" src="./images/title_word02.png" alt="">
             </div>
-            <div class="title_font03" data-depth="0.9">
+
+
+            <div class="title_cloud02" data-depth="0.2">
+                <img src="./images/title_cloud.png" alt="">
+            </div>
+
+
+            <div class="title_font03 title_animate">
                 <img class="word_size" src="./images/title_word03.png" alt="">
             </div>
-            <div class="title_font04" data-depth="1.1">
+
+            <div class="title_cloud03" data-depth="0.3">
+                <img src="./images/title_cloud.png" alt="">
+            </div>
+
+
+            <div class="title_font04 title_animate">
                 <img class="word_size" src="./images/title_word04.png" alt="">
             </div>
         </div>
 
         <!-- wave -->
         <div class="wave">
-            <img class="wave03" src="./images/wave03.png" alt="" >
+            <img class="wave03" src="./images/wave03.png" alt="">
         </div>
         <div class="wave">
             <img class="wave02" src="./images/wave02.png" alt="">
